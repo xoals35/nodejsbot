@@ -5,8 +5,8 @@ const moment = require("moment");
 require("moment-duration-format");
 const momenttz = require('moment-timezone');
 const MessageAdd = require('./db/message_add.js')
-const welcomeChannelName = "🟢입장🟢";
-const byeChannelName = "🟢퇴장🟢";
+const welcomeChannelName = "안녕하세요";
+const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 const adminUserId = 250693463065100298;
@@ -45,7 +45,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "시청자,구독자"));
+  member.addRole(guild.roles.find(role => role.name == "게스트"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -136,18 +136,18 @@ client.on('message', (message) => {
   }
 
   if(message.content == 'embed') {
-    let img = 'https://discordapp.com/channels/766830240772259840/766937867825315840/767293605491638272';
+    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('악마뉴비의인성')
+      .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('ㅎ헿', img, 'http://www.naver.com')
+      .setAuthor('나긋해', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
-      .addField('ㅇㅇㅇㅇ', 'ㅇㅇㅇㅇ')
-      .addField('앙', '?', true)
-      .addField('관종', '?', true)
-      .addField('관종', '?', true)
-      .addField('관종', '앗살라마라이꿈')
+      .addField('Inline field title', 'Some value here')
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('나긋해가 만듬', img)
@@ -209,9 +209,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지')
+        .setAuthor('공지 of 콜라곰 BOT')
         .setColor('#186de6')
-        .setFooter(`새벽봇❤️`)
+        .setFooter(`콜라곰 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
