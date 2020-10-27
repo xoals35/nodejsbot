@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "axioss": "0.0.1-security",
     "discord.js": "^11.5.1",
     "moment": "^2.20.1",
     "moment-duration-format": "^2.2.1",
