@@ -1,4 +1,4 @@
-const axios = require('axioss');
+const axios = require('axios');
 
 const CSRF_COOKIE_NAME = 'csrftoken';
 const CSRF_HEADER_NAME = 'X-CSRFToken';
